@@ -9,22 +9,11 @@ const HomeScreen = () => {
     const response = await axios.get(
       "https://jsonplaceholder.typicode.com/users"
     );
-    // .then((response) => {
-    //   seTdATA(response.data);
-    // })
-    // .catch((err) => {
-    //   console.log(err);
-    // });
     seTdATA(response?.data);
   };
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(data);
-
-  const Naviaget = () => {
-    return;
-  };
   return (
     <div className="App">
       <div className="container">

@@ -14,7 +14,6 @@ const Details = () => {
   useEffect(() => {
     fetchData();
   }, []);
-  console.log(data);
   return (
     <div className="wrapper">
       <div className="container h-100">
