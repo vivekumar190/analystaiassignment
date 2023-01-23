@@ -5,15 +5,11 @@ import { useParams } from "react-router-dom";
 const Details = () => {
   const params = useParams();
   const [data, seTdATA] = useState();
-  const fetchData = () => {
-    axios
-      .get(`https://jsonplaceholder.typicode.com/users/${params.id}`)
-      .then((response) => {
-        seTdATA(response.data);
-      })
-      .catch((err) => {
-        console.log(err);
-      });
+  const fetchData = async () => {
+    const response = await axios.get(
+      `https://jsonplaceholder.typicode.com/users/${params.id}`
+    );
+    seTdATA(response?.data);
   };
   useEffect(() => {
     fetchData();
